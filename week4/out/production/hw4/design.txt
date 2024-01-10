@@ -1,0 +1,36 @@
+The design of this program is done through 4 independent classes:
+-> Game
+-> Player
+-> GuessWord
+-> Picture
+
+GAME - The Game class has 2 functions:
+ 1. Initialize other classes with the inputted prompted by user through args[]. This is done in the constructor of the
+ class Game. It double-checks the position of the argument, and then creates an object of the relevant class.
+ 2. Run the logic of the game:
+    - Player 1 starts, guesses the opponent's letter
+    - If correct, the guess is updated
+    - Else, gives the turn to the opponent
+
+PLAYER - The Player class has a simple function in this game, it keeps track of the player's name and player's turn. It
+ does this through class attribute playerName, and static class method:
+  `switchPlayer()`
+ The code is designed in a way
+ that it allows the game to access other player's information through the Player class static integer `playerId`.
+
+GUESSWORD - This is one of the core classes in this game, because it stores the player's word, opponent's word, and
+ tracks how far is the opponent in discovering the player's letter (int). This class has 2 methods (besides the
+ class constructor):
+  `nextGuess()` - prompts the user to input the next letter (only if it passes the restrictions, it'll pass).
+                  All guesses are done in lowercase, in order to prevent players for any unfair advantage by changing
+                  the cases in their words, and avoid any confusion.
+  `updateGuess()` - checks to see if the player has guessed a correct letter from the opponents guess, and makes sure
+                    that the letter guessed has not already been guessed (safe for GuessLetters with the multiple
+                    same letters).
+
+PICTURE - This class is responsible for showing the picture of the opponent's player. It has 2 classes (besides the
+  class constructor):
+  `readScannerFile()` - this method is responsible for reading through the .txt file provided by the user, and saving
+                        it in a Vector array.
+  `showPicture()`- this method shows the picture of the opponent's player. It iterates over vector elements and prints
+                   elements according to the percentage of guessed words.

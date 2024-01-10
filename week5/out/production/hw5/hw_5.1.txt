@@ -1,0 +1,46 @@
+Output:
+1: 
+	C: 100
+	C: 100
+	C: 100
+	1
+	2
+	100
+2: 
+	C: 44
+	C: 44
+	C: 44
+	42
+	2
+	44
+3: 
+	C: 44
+	C: 44
+	C: 44
+	42
+	43
+	44
+
+Explanation:
+
+Flow of execution for object initialization:
+C -> B -> A -> Object -> A -> B -> C
+     B -> A -> Object -> A -> B
+          A -> Object -> A
+
+aB = (B) aC                 -> with this line we up-cast B to C.
+aB.aInstanceIntSet(200)     -> since this is cast to C, they inherit the methods/ variables from C and aB and aC are set to
+                               200
+aA   = (A)aB;               -> with this line we up-cast A to B, which was already cast to aC.
+aA.aInstanceIntSet(100)     -> now, this accesses the methods/ variables in C, and aInstanceeInt becomes 100
+
+Therefore, when we run the 1st three lines of output it always to class C as
+it is a method call it always goes to the child. Hence, we get the value from for the 
+1st 3 outputs. In the remaining 3 outputs we are using variables and this will directly 
+go to the specified class (parent) and thus we get the remaining 3 outputs from the respective objects.
+
+Before the 2nd print call, we set the value in C to 44 and value in A to 42.
+Thus, we get the following values using the same logic as above.
+
+Before the 3rd print call, we set the value in B to 43.
+Thus, we get the following values using the same logic as above.
