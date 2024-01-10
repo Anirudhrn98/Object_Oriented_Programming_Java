@@ -1,0 +1,162 @@
+X_1:
+Line 13.
+output:
+1 || 2--->
+2 || 1--->
+1 || 2<---
+2 || 1<---
+0 --->
+
+X_2:
+Line 6.
+Output:
+1 --->
+0 --->
+1 <--- || 2 --->
+0 <---
+2 ---> || 2 <---
+
+X_3:
+Line 6, Line 12, Line 13.
+Output:
+1 --->
+2 --->
+0 --->
+2 <---
+0 <---
+
+X_4:
+Line 10.
+Output:
+0 --->
+2 || 1--->
+0 <---
+2 || 1<---
+1 || 2--->
+
+X_5:
+Line 13 or Line 8, Line 13, Line 15
+Output:
+1 --->
+2 ---> 
+1 <---
+2 <--- 
+0 --->
+
+X_6:
+Line 13, Line 16.
+Output:
+1 --->
+0 --->
+2 --->
+0 <---
+2 <---
+1 <---
+
+X_7:
+Line 6, Line 15
+Output
+1 --->
+Exception in thread "Thread-1" java.lang.IllegalMonitorStateException
+0 --->
+2 --->
+0 <---
+2 <---
+
+
+X_8:
+Line 8, Line 15:
+Output:
+1 --->
+2 --->
+0 --->
+2 <---
+0 <---
+1 <---
+
+X_9:
+Line 8, Line 12, Line 13, Line 18
+Output:
+1 --->
+Exception in thread "Thread-1" java.lang.IllegalMonitorStateException
+2 --->
+0 --->
+2 <---
+0 <---
+
+X_10:
+Line 10, Line 15
+Output:
+0 --->
+1 || 2 --->
+2 || 1 --->
+1 || 2 <---
+2 || 1 <---
+0 <---
+
+X_11:
+Line 8, Line 13, Line 15
+Output:
+1 --->
+2 --->
+1 <---
+2 <---
+0 --->
+
+X_12:
+No sleeps
+Output:
+upto the scheduler 
+
+X_13:
+Line 8, Line 13, Line 15
+Output:
+1 --->
+2 --->
+1 <---
+2 <---
+0 --->
+
+X_14:
+Line 14, if id == 0 or id == 1
+Output:
+2 --->
+0 || 1 --->
+2 <---
+0 || 1 <---
+1 || 0 --->
+
+X_15:
+Line 14, if id == 0 or id == 1
+Output:
+2 --->
+0 || 1 --->
+1 || 0 --->
+0 || 1  <---
+1 || 0 <---
+2 <---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
