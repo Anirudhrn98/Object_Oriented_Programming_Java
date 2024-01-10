@@ -1,0 +1,39 @@
+In this code we have been given a main class Interference which has no constructor and contains two 
+inner static classes 'Thing<T>' and 'ThingThing<T>' was accept generic type. It also contains the 
+following methods insertThing and outputThinges. The class 'Thing<T>' has private variable aType of
+of generic type and also has two methods 'set' and 'get' which are also of generic type.
+
+When we execute the main in this code: 
+
+1. We are creating a new array list of parameterized type Thing which is a parameterized type, which in this case
+   processes Integers. 
+
+2. We are invoking the insertThing method by passing the relevent parameters,
+   i.e. an integer value (as the Thing created will only accept integers) and the 
+   newly created array list (of type Thing). 
+   The insertThing method creates a new object of type Thing which will be of the same as the type passed.
+   Then insertThing will go to the 'set' method with the inital integer passed to insertThing.
+   and set the aType variable of generic type to the value passed i.e. 10 in this case. 
+   Then insertThing will add the value to `listOfIntegerThings`
+
+3. The same process as #2 is repeated for the values 20 and 30.
+
+4. Now when we call outputThinges by passing the listOfIntegerThinges containing values 10,20 
+   and 30. It initializes the counter to 0 and in a for loop it takes type of the thing passed 
+   and goes to the 'get' method which returns the value at the specified position. The 
+   'for loop' also prints out the values one by one and increases the counter to get the output 
+   as desired.
+
+5. Now, we are creating another new array list of parameterized type Thing of parameterized type String.
+
+6. In the next step we are repeating the same process as step 2 but as all the methods and 
+   classes are of generic type they will accept Strings.
+
+
+7. "Why does the following line not compile?"
+   "Interference.<String>insertThing(Integer.valueOf(30), listOfStrings);"
+
+-> Here we are trying to pass an Integer value in a array list of type Things which only 
+   accepts Strings. The methods and classes are of generic type but it is not possible to 
+   pass differents types together while calling a method. When instantiating the method, we are telling
+   that it will be expecting <String> types.
