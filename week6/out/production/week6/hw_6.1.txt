@@ -1,0 +1,30 @@
+The design of this program is done through 3 independent classes:
+-> Node
+-> SortedStorage
+-> SortedStorageSetWithNulls
+
+Note: The data types given in the functions are all of Comparable type, meaning it will accept any type that has
+      Comparable; hence, Long, Integer, and String are all accepted. If the tree is started with one type, it should
+      proceed to process the same type.
+
+Node - The role of node class is to initialize a node with the given `Comparable` val through the constructor.
+
+SortedStorage - This class defines the basic features of the Binary Search Tree (BST);
+which are:
+     add()      - adds new Comparable type values to the tree
+     delete()   - deletes Comparable type values to the tree
+     find()     - finds Comparable type values in the tree
+     toString() - converts the SortedStorage object to a string representation
+ This class serves as the parents class for the SortedStorageSet and StortedStorageSetWithNulls. As per the requirement
+ of the exercise, this class accepts duplicates, and does not deal with nulls.
+
+SortedStorageSetWithNulls - This is a child class from SortedStorage. Compared to the parent class, this handles nulls,
+ does not accept duplicates (since it behaves like a set). This class inherits all the methods from the parent class,
+ but rewrites:
+     add()      - Different from the parent `add()` class, this handles the nulls and intentionally doesn't handle
+                  duplicates. When it has filtered what it will accept, then it will call the parent `add()` function.
+     delete()   - Different from the parent `delete()` class, this handles the nulls. This doesn't check for duplicates
+                 because the `add()` method in the first case doesn't add duplicates, hence no need to check.
+
+     find()     - Different from the parent `find()` class, this handles the nulls. The rest of the implementation is
+                  transferred to the parent class method `find()`.
