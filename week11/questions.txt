@@ -1,0 +1,5 @@
+Questions:
+When I run this statement:
+`MyThread thread = new MyThread();
+ thread.run();`
+does it autmatically make the thread as my main thread?

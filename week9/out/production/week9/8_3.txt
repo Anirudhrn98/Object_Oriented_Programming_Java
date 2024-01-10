@@ -1,0 +1,41 @@
+Requirements:
+
+• Why would the program not compile, if the line ’does not compile’ would be commented in?
+    - The program will not compile because Java will know that the statement written there is an unreachable statement.
+      The reason for this is there are return statements in `catch` & `finally` that prevent the code from ever reaching
+      that point. On the other hand, java compiler doesnt say that when we have return statements in `catch` & `final` -
+      the reason being the part in `catch` might or might not be executed, so the return statement in `final` is good. If
+      we don't have a return statement in either of the blocks, then the compiler is going to complain.
+
+• Explain the execution of each method in writing. You have to name the file 8_3.txt
+    In the main 
+        - First it goes to the noSystemExit() and executes it.
+        - Then it goes to the System.out.println statement and again goes to noSystemExit() method and executes it and prints the output.
+        - Then it goes to the method noExeption() and executes it.
+        - Then it goes to the method noExeption1() and executes it.
+        - Then it goes to the method noExeption2() and executes it.
+
+    Method noSystemExit():
+         Here first it goes into the try and throws an exception then it goes into the catch block and prints the output statement.
+         Then it goes into the finally block and prints the return statement. This method then returns 0.
+
+    Method noException():
+        Here it first goes into the try block and stores value of x as 0, since there is no exception it executes and prints the
+        output statment and then it executes the finally block and returns 3.
+
+    Method anException1():
+        Here first an integer array of size 1 is created. Then it goes into the try block and tries to access the index 2
+        in the array, which throughs ArrayIndexOutOfBoundException, the System.out.println and return statement are never
+        executed -> it goes directly to the catch block and tries executing the code. Again, it tries to access the index 2
+        in the 1-element array, and throws another exception, however, this exception is never thrown -> it goes unnoticed.
+         After that it goes into the finally block and prints the output statement and returns 2.
+
+    Method anException2():
+        Here first an integer array of size 1 is created. Then it goes into the try block and tries executing the code but
+        runs into an ArrayIndexOutOfBoundsException. Since the catch block only looks for ArithmeticException, the execution
+        goes directly to the finally block and executes it. The ArithmeticException is never thrown. It is a good habit
+        to create another `catch (Exception e)` that catches all other exceptions and handles them, so nothing goes unnoticed.
+
+    Method withSystemExit():
+         Here first it goes into the try and throws an exception then it goes into the catch block and prints the output statement.
+         After this there is 'System.exit()' which stops the execution of code.

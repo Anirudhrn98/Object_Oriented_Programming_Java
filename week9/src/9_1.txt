@@ -1,0 +1,53 @@
+In this program we have a class MyStack that implements generics and accepts generic type E.
+In the class we create a new Vector myStack that accepts parameterized type E.
+There is a method push that is a public method and returns void and accepts anElement of 
+the parameterized type E. The method adds the value passed to the vector created.
+
+There is another public method pop which accepts parameterized type E. In the method there 
+is a for loop that call the 'isEmpty' method and if it not empty it store 
+the last element and pops the element and returns the element(returns null if the stack
+was empty at the check).
+
+The 3rd method checks returns a boolean value after checking whether the stack is empty 
+or not.
+
+Here we create an interface I1.
+Then we create an class A1.
+Then we create an class A2 which extends class A1.
+Then we create an class A3 which extends class A2.
+Then we create an class A4 which extends class A2 and implements interface I1.
+
+Now we have a class GenericQ which implements 3 methods m1,m2 and m3.
+Method m1 is a public method that returns void and it accepts parameter passed through as 
+aStack and the parameter is upper bounded by wildcard till A3. So we can only pass A3 since 
+A3 has no child class.
+
+Method m2 is a public method that returns void and it accepts parameter passed through as 
+aStack and any parameter can be passed as a wildcard is used.
+
+Method m1 is a public method that returns void and it accepts parameter passed through as 
+aStack and the parameter is lower bounded by wildcard till A3. So we can pass A3, A2 and A1
+since we can pass all the parents of A3.
+
+aMyStack creates a MyStack that only stores parameterized type integer.
+aVector creates a Vector that stores parameterized type MyStack which only stores parameterized type integer.
+bMyStack creates a MyStack that stores parameterized type MyStack which only stores parameterized type integer.
+bVector creates a Vector of parameterized type MyStack that stores parameterized type MyStack which only stores parameterized type integer.
+
+Now we create a new MyStack 'aA1' that accepts only parameterized type A1.
+Then we create a new MyStack 'aA2' that accepts only parameterized type A2.
+Then we create a new MyStack 'aA3' that accepts only parameterized type A3.
+Then we create a new MyStack 'aA4' that accepts only parameterized type A4.
+
+Now we have a call that adds aMyStack to aVector.
+Then we have a call that adds bMyStack to bVector.
+
+The main of the program is empty therefor none of the code will be executed.
+
+Method Calls:
+
+m1(aA3)
+m2(aA1) or m2(aA2) or m2(aA3) or m2(aA4)
+m3(aA3) or m3(aA2) or m3(aA1)
+
+
